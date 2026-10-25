@@ -1,0 +1,59 @@
+{
+  "mcpServers": {
+    "henry-cavendish-ai": {
+      "command": "cargo",
+      "args": [
+        "run",
+        "--release",
+        "--quiet"
+      ],
+      "env": {
+        "RUST_LOG": "info",
+        "TITAN_PROTOCOL": "CAVENDISH",
+        "TARGET_CHAIN": "Sui",
+        "FIPS_203_LEVEL": "ML-KEM-768",
+        "FIPS_204_LEVEL": "ML-DSA-65"
+      },
+      "tools": [
+        {
+          "name": "measure_gravitational_constant_G",
+          "description": "Calculates universal gravitational constant G from torsion fiber deflection between lead spheres",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "large_mass_kg": {
+                "type": "number"
+              },
+              "fiber_deflection_rad": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "large_mass_kg",
+              "fiber_deflection_rad"
+            ]
+          }
+        },
+        {
+          "name": "synthesize_water_from_inflammable_air",
+          "description": "Combines hydrogen and oxygen gases with electric spark proving stoichiometric synthesis of pure water",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "hydrogen_vol_ml": {
+                "type": "number"
+              },
+              "oxygen_vol_ml": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "hydrogen_vol_ml",
+              "oxygen_vol_ml"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
